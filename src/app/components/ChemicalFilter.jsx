@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 
 export default function ChemicalFilter() {
   const [chemicals, setChemicals] = useState([]);
@@ -76,6 +77,23 @@ export default function ChemicalFilter() {
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
+      <Head>
+        <title>ChemFinder - 전 세계 화학물질 및 제조사 검색</title>
+        <meta name="description" content="전 세계 화학물질과 제조사를 검색하고, CAS 번호로 쉽게 정보를 찾아보세요. ChemFinder와 함께 효율적인 화학 정보 탐색을 시작하세요." />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "ChemFinder",
+            "url": "https://chemfinder.kr/",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://chemfinder.kr/?search={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }} />
+      </Head>
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">{t.title}</h1>
         <select value={lang} onChange={e => setLang(e.target.value)} className="border p-1 rounded">
