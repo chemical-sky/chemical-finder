@@ -94,6 +94,7 @@ export default function ChemicalFilter() {
           })
         }} />
       </Head>
+
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">{t.title}</h1>
         <select value={lang} onChange={e => setLang(e.target.value)} className="border p-1 rounded">
@@ -101,6 +102,7 @@ export default function ChemicalFilter() {
           <option value="ko">한국어</option>
         </select>
       </div>
+
       <input
         type="text"
         className="w-full p-2 border rounded mb-4"
@@ -193,6 +195,7 @@ export default function ChemicalFilter() {
                   ))}
                 </tbody>
               </table>
+
               <div className="flex justify-center gap-2 mt-4">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                   <button
